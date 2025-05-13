@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNTAXCORE - Learn to Code</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body class="light-theme">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="code-line"></div>
+            <div class="code-line"></div>
+            <div class="logo-pulse">
+                <img src="logo-icon.png" alt="SYNTAXCORE Logo">
+                <div>SYNTAX<span>CORE</span></div>
+            </div>
+            <div class="code-line"></div>
+            <div class="code-line"></div>
+        </div>
+    </div>
+
+    <!-- Floating particles -->
+    <div class="particles"></div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <input type="checkbox" id="theme-switch" class="theme-switch">
+        <label for="theme-switch" class="theme-label">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+            <span class="theme-ball"></span>
+        </label>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo" data-aos="fade-down">
+                <a href="#"><img src="images/logo-icon.png" alt="SYNTAXCORE Logo"> SYNTAX<span>CORE</span></a>
+            </div>
+            <nav class="nav" data-aos="fade-down">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#courses" class="nav-link">Courses</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#founder" class="nav-link">Founder</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+            <div class="auth-buttons" data-aos="fade-down">
+                <a href="#" class="btn btn-login" id="login-btn">Login</a>
+                <a href="#" class="btn btn-signup" id="signup-btn">Sign Up</a>
+                <div class="user-dropdown" id="user-dropdown" style="display: none;">
+                    <img src="user-avatar.jpg" alt="User" class="user-avatar">
+                    <div class="dropdown-content">
+                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Login/Signup Modal -->
+    <div class="auth-modal" id="auth-modal">
+        <div class="auth-container">
+            <div class="auth-close" id="auth-close"><i class="fas fa-times"></i></div>
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="signup">Sign Up</button>
+            </div>
+            <form class="auth-form active" id="login-form">
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <div class="social-login">
+                    <p>Or login with</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon google"><i class="fab fa-google"></i></a>
+                        <a href="#" class="social-icon github"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </form>
+            <form class="auth-form" id="signup-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Confirm Password" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="" disabled selected>Select your interest</option>
+                        <option value="web">Web Development</option>
+                        <option value="data">Data Science</option>
+                        <option value="mobile">Mobile Development</option>
+                        <option value="ai">AI/Machine Learning</option>
+                    </select>
+                </div>
+                <label class="terms-agree">
+                    <input type="checkbox" required> I agree to the <a href="#">Terms & Conditions</a>
+                </label>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                    <span class="title-word title-word-1">Learn</span>
+                    <span class="title-word title-word-2">to</span>
+                    <span class="title-word title-word-3">Code</span>
+                    <span class="title-word title-word-4">with</span>
+                    <span class="title-word title-word-5">SYNTAXCORE</span>
+                </h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
+                    Master programming skills with our interactive courses designed for all levels.
+                </p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="500">
+                    <a href="#courses" class="btn btn-primary">Explore Courses</a>
+                    <a href="#" class="btn btn-secondary">Watch Demo <i class="fas fa-play"></i></a>
+                </div>
+                <div class="hero-stats" data-aos="fade-up" data-aos-delay="700">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="5000">0</div>
+                        <div class="stat-label">Students</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="50">0</div>
+                        <div class="stat-label">Courses</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="30">0</div>
+                        <div class="stat-label">Instructors</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="700">
+                <div class="code-editor">
+                    <div class="editor-header">
+                        <div class="dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="editor-title">script.js</div>
+                    </div>
+                    <div class="editor-body">
+                        <pre><code class="language-javascript">// Welcome to SYNTAXCORE
+function greetUser(name) {
+    return `Hello ${name}, ready to code?`;
+}
+
+const user = "Developer";
+console.log(greetUser(user));
+
+// Interactive learning platform
+class Course {
+    constructor(title, level) {
+        this.title = title;
+        this.level = level;
+    }
+    
+    enroll() {
+        return `You've enrolled in ${this.title}`;
+    }
+}
+
+const jsCourse = new Course("JavaScript", "Beginner");
+console.log(jsCourse.enroll());</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down" data-aos="fade-up" data-aos-delay="900">
+            <span>Scroll Down</span>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Our Featured Courses</h2>
+                <p class="section-subtitle">Start your coding journey with our hand-picked courses</p>
+                <div class="underline"></div>
+            </div>
+            <div class="course-filters" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="beginner">Beginner</button>
+                <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+                <button class="filter-btn" data-filter="advanced">Advanced</button>
+            </div>
+            <div class="course-grid">
+                <!-- Course cards will be added dynamically with JavaScript -->
+            </div>
+            <div class="view-all" data-aos="fade-up">
+                <a href="#" class="btn btn-outline">View All Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content" data-aos="fade-right">
+                <h2 class="section-title">About SYNTAXCORE</h2>
+                <div class="underline"></div>
+                <p>SYNTAXCORE is an innovative online learning platform dedicated to making coding education accessible,
+                    engaging, and effective for everyone.</p>
+                <p>Our mission is to bridge the gap between beginners and professional developers through high-quality,
+                    project-based courses.</p>
+                <ul class="features-list">
+                    <li><i class="fas fa-check-circle"></i> Interactive coding exercises</li>
+                    <li><i class="fas fa-check-circle"></i> Real-world projects</li>
+                    <li><i class="fas fa-check-circle"></i> Expert instructors</li>
+                    <li><i class="fas fa-check-circle"></i> Community support</li>
+                    <li><i class="fas fa-check-circle"></i> AI-powered learning assistant</li>
+                    <li><i class="fas fa-check-circle"></i> Career guidance</li>
+                </ul>
+                <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+            <div class="about-image" data-aos="fade-left">
+                <div class="floating-elements">
+                    <div class="floating-element html">HTML</div>
+                    <div class="floating-element css">CSS</div>
+                    <div class="floating-element js">JS</div>
+                    <div class="floating-element python">Python</div>
+                    <div class="floating-element react">React</div>
+                    <div class="main-image">
+                        <img src="https://img.freepik.com/premium-photo/illustration-girl-laptop-woman-freelancer-girl-student_171580-1363.jpg"
+                            alt="code illustration">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Why Choose SYNTAXCORE</h2>
+                <p class="section-subtitle">Our unique approach to coding education</p>
+                <div class="underline"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Interactive Learning</h3>
+                    <p>Practice coding directly in your browser with our interactive coding environment and instant
+                        feedback.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Project-Based</h3>
+                    <p>Build real projects that you can add to your portfolio and show to potential employers.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Career Paths</h3>
+                    <p>Structured learning paths designed to take you from beginner to job-ready developer.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Assistant</h3>
+                    <p>Get personalized help from our AI coding assistant whenever you're stuck.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community</h3>
+                    <p>Join our vibrant community of learners and get support from peers and mentors.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certification</h3>
+                    <p>Earn recognized certificates upon completion to showcase your skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder" id="founder">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Meet Our Founder</h2>
+                <p class="section-subtitle">The visionary behind SYNTAXCORE</p>
+                <div class="underline"></div>
+            </div>
+            <div class="founder-content">
+                <div class="founder-image" data-aos="fade-right">
+                    <div class="image-container">
+                        <img src="founder.jpg" alt="Sofia Kea Mohammed">
+                        <div class="tech-icons">
+                            <i class="fab fa-html5"></i>
+                            <i class="fab fa-css3-alt"></i>
+                            <i class="fab fa-js"></i>
+                            <i class="fab fa-python"></i>
+                            <i class="fab fa-react"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="founder-info" data-aos="fade-left">
+                    <h3>Sofia Kea Mohammed</h3>
+                    <p class="title">Founder & CEO</p>
+                    <div class="education">
+                        <p><i class="fas fa-graduation-cap"></i> Kiriri Women's University of Science and Technology</p>
+                        <p><i class="fas fa-laptop-code"></i> Dse. Software Engineering</p>
+                    </div>
+                    <p class="bio">Sofia is a passionate software engineering student who founded SYNTAXCORE to
+                        democratize coding education. Her vision is to create a platform that makes learning to code
+                        engaging and accessible to everyone, regardless of their background.</p>
+                    <div class="social-links">
+                        <a href="https://x.com/KeaSofia"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Skm9979"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/bambi37350/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">What Our Students Say</h2>
+                <p class="section-subtitle">Success stories from our community</p>
+                <div class="underline"></div>
+            </div>
+            <div class="testimonial-slider" data-aos="fade-up">
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <!-- Testimonials will be added dynamically with JavaScript -->
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots"></div>
+                    <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Simple, Transparent Pricing</h2>
+                <p class="section-subtitle">Choose the plan that fits your learning goals</p>
+                <div class="underline"></div>
+            </div>
+            <div class="pricing-switch" data-aos="fade-up">
+                <span>Monthly</span>
+                <label class="switch">
+                    <input type="checkbox" id="pricing-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span>Yearly <span class="discount">(Save 20%)</span></span>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-header">
+                        <h3>Basic</h3>
+                        <div class="price">
+                            <span class="monthly-price">Kes 1,500.99</span>
+                            <span class="yearly-price">Kes 17,559.99</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>Perfect for beginners starting their coding journey</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Access to all beginner courses</li>
+                        <li><i class="fas fa-check"></i> Community support</li>
+                        <li><i class="fas fa-check"></i> Basic coding exercises</li>
+                        <li><i class="fas fa-check"></i> Limited AI assistance</li>
+                        <li><i class="fas fa-times"></i> Project-based courses</li>
+                        <li><i class="fas fa-times"></i> Certificates</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Get Started</a>
+                </div>
+                <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Pro</h3>
+                        <div class="price">
+                            <span class="monthly-price">2,719.99</span>
+                            <span class="yearly-price">Kes 24,415.99</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>For serious learners building professional skills</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Access to all courses</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Advanced coding exercises</li>
+                        <li><i class="fas fa-check"></i> Full AI assistance</li>
+                        <li><i class="fas fa-check"></i> Project-based courses</li>
+                        <li><i class="fas fa-check"></i> Completion certificates</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <div class="price">
+                            <span class="monthly-price">Kes 3,649.99</span>
+                            <span class="yearly-price">Kes 36,539.99</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>For teams and organizations</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Everything in Pro</li>
+                        <li><i class="fas fa-check"></i> Team management</li>
+                        <li><i class="fas fa-check"></i> Progress tracking</li>
+                        <li><i class="fas fa-check"></i> Custom learning paths</li>
+                        <li><i class="fas fa-check"></i> Dedicated account manager</li>
+                        <li><i class="fas fa-check"></i> API access</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content" data-aos="fade-right">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="underline"></div>
+                <p>Have questions or want to join our team? We'd love to hear from you!</p>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>keasofia236@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+254 799798266</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Nairobi, Kenya</span>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://x.com/KeaSofia"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/antony.gicobi.94/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/bambi37350/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/@lostbambi3"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="contact-form" data-aos="fade-left">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <div class="chatbot-title">
+                <i class="fas fa-robot"></i>
+                <h3>SyntaxBot</h3>
+            </div>
+            <button class="chatbot-close" id="chatbot-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="message bot-message">
+                <div class="message-content">
+                    Hello! I'm SyntaxBot, your AI coding assistant. How can I help you today?
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-input" placeholder="Type your question here...">
+            <button id="chatbot-send"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <button class="chatbot-toggle" id="chatbot-toggle">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo" data-aos="fade-up">
+                    <a href="#"><img src="images/logo-icon.png" alt="SYNTAXCORE Logo"> SYNTAX<span>CORE</span></a>
+                    <p>Learn to code, change the world.</p>
+                </div>
+                <div class="footer-links" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#founder">Founder</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-courses" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Popular Courses</h3>
+                    <ul>
+                        <li><a href="#">JavaScript Fundamentals</a></li>
+                        <li><a href="#">Python for Beginners</a></li>
+                        <li><a href="#">Web Development Bootcamp</a></li>
+                        <li><a href="#">Data Science Essentials</a></li>
+                        <li><a href="#">Mobile App Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new courses and offers.</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom" data-aos="fade-up">
+                <p>&copy; 2025 SYNTAXCORE. All Rights Reserved. Founded by Sofia Kea Mohammed.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" data-aos="fade-up">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
